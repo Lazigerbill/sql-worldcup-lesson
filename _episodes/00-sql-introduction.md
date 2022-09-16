@@ -15,6 +15,7 @@ keypoints:
 - "Different database management systems (DBMS) use slightly different vocabulary, but they are all based on the same ideas."
 ---
 
+
 ## Setup
 
 _Note: this should have been done by participants before the start of the workshop._
