@@ -66,9 +66,9 @@ Let's look at some of the cleaned spreadsheets you downloaded during [Setup](../
 > What information is contained in each file?  Specifically, if I had
 > the following research questions:
 >
-> * How has the hindfoot length and weight of *Dipodomys* species changed over time?
-> * What is the average weight of each species, per year?
-> * What information can I learn about *Dipodomys* species in the 2000s, over time?
+> * Does players height affect their performance suring the games?
+> * Does the attendance number affect the outcome of the host countrly?
+> * What information can I learn about WorldCup outcomes from 1930, over time?
 >
 > What would I need to answer these questions?  Which files have the data I need? What
 > operations would I need to perform if I were doing these analyses by hand?
