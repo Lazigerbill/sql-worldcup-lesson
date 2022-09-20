@@ -66,7 +66,7 @@ Let's look at some of the cleaned spreadsheets you downloaded during [Setup](../
 > What information is contained in each file?  Specifically, if I had
 > the following research questions:
 >
-> * Does players height affect their performance suring the games?
+> * Does players height affect their performance during the games?
 > * Does the attendance number affect the outcome of the host countrly?
 > * What information can I learn about WorldCup outcomes from 1930, over time?
 >
