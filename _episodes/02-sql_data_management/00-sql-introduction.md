@@ -181,8 +181,8 @@ follow these instructions:
     - Give a name and click Save to create the database in the opened folder
     - In the "Edit table definition" window that pops up, click cancel as we will be importing tables, not creating them from scratch
 2. Select **File >> Import >> Table from CSV file...**
-3. Choose `surveys.csv` from the data folder we downloaded and click **Open**.
-4. Give the table a name that matches the file name (`surveys`), or use the default
+3. Choose `matches.csv` from the data folder we downloaded and click **Open**.
+4. Give the table a name that matches the file name (`matches`), or use the default
 5. If the first row has column headings, be sure to check the box next to "Column names in first line".
 6. Be sure the field separator and quotation options are correct. If you're not sure which options are correct, test some of the options until the preview at the bottom of the window looks right.
 7. Press **OK**, you should subsequently get a message that the table was imported.
@@ -190,21 +190,30 @@ follow these instructions:
 10. Click **Save** if asked to save all pending changes.
 11. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also):
 
-| Field             | Data Type      | Motivation                                                                       | Table(s)          |
-|-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
-| day               | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | surveys           |
-| genus             | TEXT           | Field contains text data                                                 	| species           |
-| hindfoot_length   | REAL           | Field contains measured numeric data                                             | surveys           |
-| month             | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | surveys           |
-| plot_id           | INTEGER        | Field contains numeric data	    						| plots, surveys    |
-| plot_type         | TEXT           | Field contains text data                                                 	| plots             |
-| record_id         | INTEGER        | Field contains numeric data 							| surveys           |
-| sex               | TEXT           | Field contains text data                                                 	| surveys           |
-| species_id        | TEXT           | Field contains text data								| species, surveys  |
-| species           | TEXT           | Field contains text data                                                 	| species           |
-| taxa              | TEXT           | Field contains text data                                                 	| species           |
-| weight            | REAL           | Field contains measured numerical data                                           | surveys           |
-| year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
+| Field                | Data Type      | Motivation                                                                       | Table(s)          |
+|----------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
+| Year                 | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | matches           |
+| Datetime             | TEXT           | Field contains text data                                                 	       | matches           |
+| Stage                | REAL           | Field contains measured numeric data                                             | matches           |
+| Stadium              | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | matches           |
+| City                 | INTEGER        | Field contains numeric data	    					                                     	 | matches           |
+| Home Team Name       | TEXT           | Field contains text data                                                       	 | matches           |
+| Home Team Goals      | INTEGER        | Field contains numeric data 			                                        			 | matches           |
+| Away Team Goals      | INTEGER        | Field contains text data                                                 	       | matches           |
+| Away Team Name       | TEXT           | Field contains text data								                                         | matches           |
+| Win conditions       | TEXT           | Field contains text data                                                 	       | matches           |
+| Attendance           | TEXT           | Field contains text data                                                 	       | matches           |
+| Half-time Home goals | INTEGER        | Field contains measured numerical data                                           | matches           |
+| Half-time Away Goals | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Referee              | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Assisstant 1         | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Assisstant 2         | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| RoundID              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| MatchID              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Home Team Initials   | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Away Team Initials   | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+
+
 
 12. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
