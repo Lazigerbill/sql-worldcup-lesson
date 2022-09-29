@@ -205,11 +205,11 @@ follow these instructions:
 | Attendance           | INTEGER        | Allows for meaningful arithmetic and comparisons                         	       | matches           |
 | Half-time Home goals | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
 | Half-time Away Goals | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| Referee              | TEXT           | Field contains text datas                                                        | matches           |
+| Referee              | TEXT           | Field contains text data                                                         | matches           |
 | Assisstant 1         | TEXT           | Field contains text data                                                         | matches           |
 | Assisstant 2         | TEXT           | Field contains text data                                                         | matches           |
-| RoundID              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| MatchID              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| RoundID              | INTEGER        | Field contains numerical data                                                    | matches           |
+| MatchID              | INTEGER        | Field contains numerical data                                                    | matches           |
 | Home Team Initials   | TEXT           | Field contains text data                                                         | matches           |
 | Away Team Initials   | TEXT           | Field contains text data                                                         | matches           |
 
