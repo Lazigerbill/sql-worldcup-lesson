@@ -194,24 +194,24 @@ follow these instructions:
 |----------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
 | Year                 | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | matches           |
 | Datetime             | TEXT           | Field contains text data                                                 	       | matches           |
-| Stage                | REAL           | Field contains measured numeric data                                             | matches           |
-| Stadium              | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | matches           |
-| City                 | INTEGER        | Field contains numeric data	    					                                     	 | matches           |
+| Stage                | TEXT           | Field contains text data                                                         | matches           |
+| Stadium              | TEXT           | Field contains text data                                                         | matches           |
+| City                 | TEXT           | Field contains text data	    					                                      	 | matches           |
 | Home Team Name       | TEXT           | Field contains text data                                                       	 | matches           |
-| Home Team Goals      | INTEGER        | Field contains numeric data 			                                        			 | matches           |
-| Away Team Goals      | INTEGER        | Field contains text data                                                 	       | matches           |
+| Home Team Goals      | INTEGER        | Allows for meaningful arithmetic and comparisons  			                      	 | matches           |
+| Away Team Goals      | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
 | Away Team Name       | TEXT           | Field contains text data								                                         | matches           |
 | Win conditions       | TEXT           | Field contains text data                                                 	       | matches           |
-| Attendance           | TEXT           | Field contains text data                                                 	       | matches           |
-| Half-time Home goals | INTEGER        | Field contains measured numerical data                                           | matches           |
+| Attendance           | INTEGER        | Allows for meaningful arithmetic and comparisons                         	       | matches           |
+| Half-time Home goals | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
 | Half-time Away Goals | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| Referee              | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| Assisstant 1         | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| Assisstant 2         | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Referee              | TEXT           | Field contains text datas                                                        | matches           |
+| Assisstant 1         | TEXT           | Field contains text data                                                         | matches           |
+| Assisstant 2         | TEXT           | Field contains text data                                                         | matches           |
 | RoundID              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
 | MatchID              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| Home Team Initials   | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
-| Away Team Initials   | TEXT           | Allows for meaningful arithmetic and comparisons                                 | matches           |
+| Home Team Initials   | TEXT           | Field contains text data                                                         | matches           |
+| Away Team Initials   | TEXT           | Field contains text data                                                         | matches           |
 
 
 
