@@ -56,9 +56,9 @@ exactly the same tools we'll learn about today.
 
 Let's look at some of the cleaned spreadsheets you downloaded during [Setup](../setup.html) to complete this challenge. You'll need the following three files:
 
-* `worldcup.csv`
-* `worldcupmatches.csv`
-* `worldcupplayers.csv`
+* `matches.csv`
+* `players.csv`
+* `squads.csv`
 
 > ## Challenge
 >
