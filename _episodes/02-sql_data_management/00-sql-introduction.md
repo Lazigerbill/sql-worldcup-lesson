@@ -41,16 +41,7 @@ These queries can allow you to perform a number of actions such as: insert, sele
 
 ## Dataset Description
 
-The data we will be using is a time-series for a small mammal community in
-southern Arizona. This is part of a project studying the effects of rodents and
-ants on the plant community that has been running for almost 40 years.  The
-rodents are sampled on a series of 24 plots, with different experimental
-manipulations controlling which rodents are allowed to access which plots.
-
-This is a real dataset that has been used in over 100 publications. We've
-simplified it for the workshop, but you can download the
-[full dataset](http://esapubs.org/archive/ecol/E090/118/) and work with it using
-exactly the same tools we'll learn about today.
+The data we will be using different world cup historical information from 1930 to 2014. This is a real and complete dataset that includes dates and times of matches, countries that were playing, winners, losers, winning conditions, players, attendance, referees, assistants, etc. 
 
 ## Questions
 
