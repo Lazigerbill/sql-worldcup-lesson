@@ -17,14 +17,12 @@ keypoints:
 
 ## Writing my first query
 
-Let's start by using the **surveys** table. Here we have data on every
-individual that was captured at the site, including when they were captured,
-what plot they were captured on, their species ID, sex and weight in grams.
+Let's start by using the **matches** table. Here we have data on every world cup game that was played from 1930 to 2014: the outcome of every game, goals at half time, host city, attendance, etc.
 
-Let’s write an SQL query that selects all of the columns in the surveys table. SQL queries can be written in the box located under the "Execute SQL" tab. Click on the right arrow above the query box to execute the query. (You can also use the keyboard shortcut "Cmd-Enter" on a Mac or "Ctrl-Enter" on a Windows machine to execute a query.) The results are displayed in the box below your query. If you want to display all of the columns in a table, use the wildcard *.
+Let’s write an SQL query that selects all of the columns in the matches table. SQL queries can be written in the box located under the "Execute SQL" tab. Click on the right arrow above the query box to execute the query. (You can also use the keyboard shortcut "Cmd-Enter" on a Mac or "Ctrl-Enter" on a Windows machine to execute a query.) The results are displayed in the box below your query. If you want to display all of the columns in a table, use the wildcard *.
 
     SELECT *
-    FROM surveys;
+    FROM matches;
 
 We have capitalized the words SELECT and FROM because they are SQL keywords.
 SQL is case insensitive, but it helps for readability, and is good style.
@@ -32,20 +30,20 @@ SQL is case insensitive, but it helps for readability, and is good style.
 If we want to select a single column, we can type the column name instead of the wildcard *.
 
     SELECT year
-    FROM surveys;
+    FROM matches;
 
 If we want more information, we can add more columns to the list of fields,
 right after SELECT:
 
     SELECT year, month, day
-    FROM surveys;
+    FROM matches;
 
 ### Limiting results
 
 Sometimes you don't want to see all the results, you just want to get a sense of what's being returned. In that case, you can use the `LIMIT` command. In particular, you would want to do this if you were working with large databases.
 
     SELECT *
-    FROM surveys
+    FROM matches
     LIMIT 10; 
 
 ### Unique values
@@ -54,13 +52,13 @@ If we want only the unique values so that we can quickly see what species have
 been sampled we use `DISTINCT` 
 
     SELECT DISTINCT species_id
-    FROM surveys;
+    FROM matches;
 
 If we select more than one column, then the distinct pairs of values are
 returned
 
     SELECT DISTINCT year, species_id
-    FROM surveys;
+    FROM matches;
 
 ### Calculated values
 
@@ -69,7 +67,7 @@ For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
     SELECT year, month, day, weight/1000
-    FROM surveys;
+    FROM matches;
 
 When we run the query, the expression `weight / 1000` is evaluated for each
 row and appended to that row, in a new column. If we used the `INTEGER` data type
@@ -79,7 +77,7 @@ any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
 functions. For example, we could round the values to make them easier to read.
 
     SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000, 2)
-    FROM surveys;
+    FROM matches;
 
 > ## Challenge
 >
@@ -88,7 +86,7 @@ functions. For example, we could round the values to make them easier to read.
 > > ## Solution
 > > ~~~
 > > SELECT day, month, year, species_id, weight * 1000
-> > FROM surveys;
+> > FROM matches;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -102,13 +100,13 @@ _Dipodomys merriami_, which has a species code of DM.  We need to add a
 `WHERE` clause to our query:
 
     SELECT *
-    FROM surveys
+    FROM matches
     WHERE species_id='DM';
 
 We can do the same thing with numbers.
 Here, we only want the data since 2000:
 
-    SELECT * FROM surveys
+    SELECT * FROM matches
     WHERE year >= 2000;
 
 If we used the `TEXT` data type for the year, the `WHERE` clause should
@@ -119,7 +117,7 @@ with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merria
 starting in the year 2000:
 
     SELECT *
-    FROM surveys
+    FROM matches
     WHERE (year >= 2000) AND (species_id = 'DM');
 
 Note that the parentheses are not needed, but again, they help with
@@ -130,7 +128,7 @@ If we wanted to get data for any of the *Dipodomys* species, which have
 species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
     SELECT *
-    FROM surveys
+    FROM matches
     WHERE (species_id = 'DM') OR (species_id = 'DO') OR (species_id = 'DS');
 
 > ## Challenge
@@ -142,7 +140,7 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 > > ## Solution
 > > ~~~
 > > SELECT day, month, year, species_id, weight / 1000
-> > FROM surveys
+> > FROM matches
 > > WHERE (plot_id = 1) AND (weight > 75);
 > > ~~~
 > > {: .sql}
@@ -157,7 +155,7 @@ to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (specie
 = 'DO') OR (species_id = 'DS')`, but reads more neatly:
 
     SELECT *
-    FROM surveys
+    FROM matches
     WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
 
 We started with something simple, then added more clauses one by one, testing
@@ -171,8 +169,8 @@ comments are started by `--`, and end at the end of the line. For example, a
 commented version of the above query can be written as:
 
     -- Get post 2000 data on Dipodomys' species
-    -- These are in the surveys table, and we are interested in all columns
-    SELECT * FROM surveys
+    -- These are in the matches table, and we are interested in all columns
+    SELECT * FROM matches
     -- Sampling year is in the column `year`, and we want to include 2000
     WHERE (year >= 2000)
     -- Dipodomys' species have the `species_id` DM, DO, and DS
@@ -187,7 +185,7 @@ We can also sort the results of our queries by using `ORDER BY`.
 For simplicity, let’s go back to the **species** table and alphabetize it by taxa.
 
 First, let's look at what's in the **species** table. It's a table of the species_id and the full genus, species and taxa information for each species_id. Having this in a separate table is nice, because we didn't need to include all
-this information in our main **surveys** table.
+this information in our main **matches** table.
 
     SELECT *
     FROM species;
@@ -217,12 +215,12 @@ To truly be alphabetical, we might want to order by genus then species.
 > ## Challenge
 >
 > - Write a query that returns year, species_id, and weight in kg from
-> the surveys table, sorted with the largest weights at the top.
+> the matches table, sorted with the largest weights at the top.
 >
 > > ## Solution
 > > ~~~
 > > SELECT year, species_id, weight / 1000
-> > FROM surveys
+> > FROM matches
 > > ORDER BY weight DESC;
 > > ~~~
 > > {: .sql}
@@ -256,7 +254,7 @@ we recommend to put each clause on its own line.
 > ## Challenge
 >
 > - Let's try to combine what we've learned so far in a single
-> query. Using the surveys table, write a query to display the three date fields,
+> query. Using the matches table, write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
 > - Write the query as a single line, then put each clause on its own line, and
@@ -265,7 +263,7 @@ we recommend to put each clause on its own line.
 > > ## Solution
 > > ~~~
 > > SELECT year, month, day, species_id, ROUND(weight / 1000, 2)
-> > FROM surveys
+> > FROM matches
 > > WHERE year = 1999
 > > ORDER BY species_id;
 > > ~~~
