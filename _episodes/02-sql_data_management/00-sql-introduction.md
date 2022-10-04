@@ -66,9 +66,9 @@ Let's look at some of the cleaned spreadsheets you downloaded during [Setup](../
 > What information is contained in each file?  Specifically, if I had
 > the following research questions:
 >
-> * Does players height affect their performance during the games?
+> * Does the average age of players in the team affect their performance in the world cup?
 > * Does the attendance number affect the outcome of the host countrly?
-> * What information can I learn about WorldCup outcomes from 1930, over time?
+> * What information can I learn about World Cup outcomes from 1930, over time?
 >
 > What would I need to answer these questions?  Which files have the data I need? What
 > operations would I need to perform if I were doing these analyses by hand?
