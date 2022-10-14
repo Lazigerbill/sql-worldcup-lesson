@@ -95,41 +95,40 @@ functions. For example, we could round the values to make them easier to read.
 ## Filtering
 
 Databases can also filter data – selecting only the data meeting certain
-criteria.  For example, let’s say we only want data for the species
-_Dipodomys merriami_, which has a species code of DM.  We need to add a
+criteria.  For example, let’s say we only want data for final games, which has "Final" as Stage name.  We need to add a
 `WHERE` clause to our query:
 
     SELECT *
     FROM matches
-    WHERE species_id='DM';
+    WHERE Stage='Final';
 
 We can do the same thing with numbers.
-Here, we only want the data since 2000:
+Here, we only want the data since 1992:
 
     SELECT * FROM matches
-    WHERE year >= 2000;
+    WHERE Year >= 1992;
 
 If we used the `TEXT` data type for the year, the `WHERE` clause should
-be `year >= '2000'`. 
+be `year >= '1992'`. 
 
 We can use more sophisticated conditions by combining tests
-with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
-starting in the year 2000:
+with `AND` and `OR`.  For example, suppose we want the data on finals
+starting in the year 1992:
 
     SELECT *
     FROM matches
-    WHERE (year >= 2000) AND (species_id = 'DM');
+    WHERE (year >= 1992) AND (Stage = 'Final');
 
 Note that the parentheses are not needed, but again, they help with
 readability.  They also ensure that the computer combines `AND` and `OR`
 in the way that we intend.
 
-If we wanted to get data for any of the *Dipodomys* species, which have
-species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
+If we wanted to get data for any of the Quarter-final, Semi-final and Final games, which have
+Stage names `Quarter-finals`, `Semi-finals`, and `Final`, we could combine the tests using OR:
 
     SELECT *
     FROM matches
-    WHERE (species_id = 'DM') OR (species_id = 'DO') OR (species_id = 'DS');
+    WHERE (Stage = 'Quarter-finals') OR (Stage = 'Semi-finals') OR (Stage = 'Final');
 
 > ## Challenge
 >
