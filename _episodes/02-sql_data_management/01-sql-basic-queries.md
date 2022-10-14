@@ -133,14 +133,13 @@ Stage names `Quarter-finals`, `Semi-finals`, and `Final`, we could combine the t
 > ## Challenge
 >
 > - Produce a table listing the data for all individuals in Plot 1 
-> that weighed more than 75 grams, telling us the date, species id code, and weight
-> (in kg). 
+> that had anattendance of more than 50000 people, telling us the date, MatchID, and Stadium. 
 >
 > > ## Solution
 > > ~~~
-> > SELECT day, month, year, species_id, weight / 1000
+> > SELECT Datetime, MatchID, Attendance
 > > FROM matches
-> > WHERE (plot_id = 1) AND (weight > 75);
+> > WHERE (plot_id = 1) AND (Attendance > 50000);
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -148,14 +147,14 @@ Stage names `Quarter-finals`, `Semi-finals`, and `Final`, we could combine the t
 
 ## Building more complex queries
 
-Now, let's combine the above queries to get data for the 3 _Dipodomys_ species from
-the year 2000 on.  This time, let’s use IN as one way to make the query easier
-to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (species_id
-= 'DO') OR (species_id = 'DS')`, but reads more neatly:
+Now, let's combine the above queries to get data for the Quarter-finals, Semifinals and Final stages from
+the year 1992 on.  This time, let’s use IN as one way to make the query easier
+to understand.  It is equivalent to saying `WHERE (Stage = 'Quarter-finals') OR (Stage
+= 'Semi-finals') OR (Stage = 'Final')`, but reads more neatly:
 
     SELECT *
     FROM matches
-    WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
+    WHERE (Attendance >= 50000) AND (Stage IN ('Quarter-finals', 'Semi-finals', 'Final'));
 
 We started with something simple, then added more clauses one by one, testing
 their effects as we went along.  For complex queries, this is a good strategy,
@@ -167,13 +166,13 @@ When the queries become more complex, it can be useful to add comments. In SQL,
 comments are started by `--`, and end at the end of the line. For example, a
 commented version of the above query can be written as:
 
-    -- Get post 2000 data on Dipodomys' species
+    -- Get post 50000 data on Quarter-finals, Semifinals and Final stages
     -- These are in the matches table, and we are interested in all columns
     SELECT * FROM matches
-    -- Sampling year is in the column `year`, and we want to include 2000
-    WHERE (year >= 2000)
-    -- Dipodomys' species have the `species_id` DM, DO, and DS
-    AND (species_id IN ('DM', 'DO', 'DS'));
+    -- Sampling year is in the column `Attendance`, and we want to include 1992
+    WHERE (Attendance >= 1992)
+    -- Quarter-finals, Semi-finals and Final stages have the `Stage` names Quarter-finals, Semi-finals and Final
+    AND (Stage IN ('Quarter-finals', 'Semi-finals', 'Final'));
 
 Although SQL queries often read like plain English, it is *always* useful to add
 comments; this is especially true of more complex queries.
