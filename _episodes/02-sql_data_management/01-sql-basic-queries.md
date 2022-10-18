@@ -180,46 +180,46 @@ comments; this is especially true of more complex queries.
 ## Sorting
 
 We can also sort the results of our queries by using `ORDER BY`.
-For simplicity, let’s go back to the **matches** table and alphabetize it by taxa.
+For simplicity, let’s go back to the **WorldCupPlayers** table and alphabetize it by taxa.
 
-First, let's look at what's in the **matches** table. It's a table of the MatchID and RoundID, Home Team and Away Team information for each MatchID. Having this in a separate table is nice, because we didn't need to include all
-this information in our main **matches** table.
-
-    SELECT *
-    FROM Matches;
-
-Now let's order it by taxa.
+First, let's look at what's in the **WorldCupPlayers** table. It's a table of the RoundID and MatchID, names and players' information for every game. Having this in a separate table is nice, because we didn't need to include all
+this information in our main **Matches** table.
 
     SELECT *
-    FROM Matches
-    ORDER BY taxa ASC;
+    FROM WorldCupPlayers;
+
+Now let's order it by Player Name.
+
+    SELECT *
+    FROM WorldCupPlayers
+    ORDER BY Player Name ASC;
 
 The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
     SELECT *
-    FROM Matches
-    ORDER BY taxa DESC;
+    FROM WorldCupPlayers
+    ORDER BY Player Name DESC;
 
 `ASC` is the default.
 
 We can also sort on several fields at once.
-To truly be alphabetical, we might want to order by genus then species.
+To truly be alphabetical, we might want to order by MatchID then Team Initials.
 
     SELECT *
-    FROM species
-    ORDER BY genus ASC, species ASC;
+    FROM WorldCupPlayers
+    ORDER BY MatchID ASC, Team Initials ASC;
 
 > ## Challenge
 >
-> - Write a query that returns year, species_id, and weight in kg from
-> the matches table, sorted with the largest weights at the top.
+> - Write a query that returns Year, MatchID, and attendance from
+> the matches table, sorted with the largest attendance at the top.
 >
 > > ## Solution
 > > ~~~
-> > SELECT year, species_id, weight / 1000
+> > SELECT Year, MatchID, attendance
 > > FROM matches
-> > ORDER BY weight DESC;
+> > ORDER BY Attendance DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
