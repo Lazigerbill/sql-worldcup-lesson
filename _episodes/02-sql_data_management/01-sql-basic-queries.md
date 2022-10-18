@@ -180,25 +180,25 @@ comments; this is especially true of more complex queries.
 ## Sorting
 
 We can also sort the results of our queries by using `ORDER BY`.
-For simplicity, let’s go back to the **species** table and alphabetize it by taxa.
+For simplicity, let’s go back to the **matches** table and alphabetize it by taxa.
 
-First, let's look at what's in the **species** table. It's a table of the species_id and the full genus, species and taxa information for each species_id. Having this in a separate table is nice, because we didn't need to include all
+First, let's look at what's in the **matches** table. It's a table of the MatchID and RoundID, Home Team and Away Team information for each MatchID. Having this in a separate table is nice, because we didn't need to include all
 this information in our main **matches** table.
 
     SELECT *
-    FROM species;
+    FROM Matches;
 
 Now let's order it by taxa.
 
     SELECT *
-    FROM species
+    FROM Matches
     ORDER BY taxa ASC;
 
 The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
     SELECT *
-    FROM species
+    FROM Matches
     ORDER BY taxa DESC;
 
 `ASC` is the default.
