@@ -228,13 +228,13 @@ To truly be alphabetical, we might want to order by MatchID then Team Initials.
 ## Order of execution
 
 Another note for ordering. We don’t actually have to display a column to sort by
-it.  For example, let’s say we want to order the birds by their species ID, but
-we only want to see genus and species.
+it.  For example, let’s say we want to order the Team Initials FRA by their MatchID, but
+we only want to see Player Name and Shirt Number.
 
-    SELECT genus, species
-    FROM species
-    WHERE taxa = 'Bird'
-    ORDER BY species_id ASC;
+    SELECT Player Name, Shirt Number
+    FROM WorldCupPlayers
+    WHERE Team Initials = 'FRA'
+    ORDER BY MatchID ASC;
 
 We can do this because sorting occurs earlier in the computational pipeline than
 field selection.
