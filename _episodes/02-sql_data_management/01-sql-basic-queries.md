@@ -253,17 +253,17 @@ we recommend to put each clause on its own line.
 >
 > - Let's try to combine what we've learned so far in a single
 > query. Using the matches table, write a query to display the three date fields,
-> `species_id`, and weight in kilograms (rounded to two decimal places), for
-> individuals captured in 1999, ordered alphabetically by the `species_id`.
+> `MatchesID`, Home Team Name and Away Team Name, for
+> games in 1999, ordered alphabetically by the `Home Team Name`.
 > - Write the query as a single line, then put each clause on its own line, and
 > see how more legible the query becomes!
 >
 > > ## Solution
 > > ~~~
-> > SELECT year, month, day, species_id, ROUND(weight / 1000, 2)
+> > SELECT Year, MatchID, Home Team Name, Away Team Name, Home Team Goals and Away Team Goals
 > > FROM matches
 > > WHERE year = 1999
-> > ORDER BY species_id;
+> > ORDER BY Home Team Name;
 > > ~~~
 > > {: .sql}
 > {: .solution}
