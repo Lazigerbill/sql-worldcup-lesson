@@ -35,12 +35,12 @@ what is desired when combining two tables with data that is related in some way.
 
 For that, we need to tell the computer which columns provide the link between the two
 tables using the word `ON`.  What we want is to join the data with the same
-species id.
+matchID.
 
     SELECT *
-    FROM surveys
-    JOIN species
-    ON surveys.species_id = species.species_id;
+    FROM players
+    JOIN matches
+    ON players.matchID = species.species_id;
 
 `ON` is like `WHERE`. It filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
