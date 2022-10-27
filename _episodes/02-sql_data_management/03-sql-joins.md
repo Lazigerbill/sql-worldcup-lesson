@@ -40,7 +40,7 @@ matchID.
     SELECT *
     FROM players
     JOIN matches
-    ON players.matchID = species.species_id;
+    ON players.matchID = matches.matchID;
 
 `ON` is like `WHERE`. It filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
