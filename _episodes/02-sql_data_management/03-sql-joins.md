@@ -50,8 +50,8 @@ The output of the `JOIN` command will have columns from the first table plus the
 columns from the second table. For the above command, the output will be a table
 that has the following column names:
 
-| RoundID | month | day | year | plot_id | species_id | sex | hindfoot_length | weight | species_id | genus | species | taxa |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard |
+|Penalty Scored|---|---|---|---|---|---|---|---|---|---|---|---|
 | ... |||||||||||||   
 | 96  | 8  | 20  | 1997  | 12  | **DM**  |  M |  36  |  41  | **DM** | Dipodomys  | merriami  | Rodent  |
 | ... |||||||||||||| 
