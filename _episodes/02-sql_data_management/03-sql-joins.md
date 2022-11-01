@@ -51,7 +51,7 @@ columns from the second table. For the above command, the output will be a table
 that has the following column names:
 
 | RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard |
-|Penalty Scored|---|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ... |||||||||||||   
 | 96  | 8  | 20  | 1997  | 12  | **DM**  |  M |  36  |  41  | **DM** | Dipodomys  | merriami  | Rodent  |
 | ... |||||||||||||| 
