@@ -53,7 +53,7 @@ that has the following column names:
 | RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ... |||||||||||||   
-| 96  | 8  | 20  | 1997  | 12  | **DM**  |  M |  36  |  41  | **DM** | Dipodomys  | merriami  | Rodent  |
+| 278  | 2347  | FRA  | HIDALGO Michael (FRA)  | S  | 17  |  Bernard LACOMBE |    |  1  |  |   |   |   |
 | ... |||||||||||||| 
 
 Alternatively, we can use the word `USING`, as a short-hand. `USING` only 
