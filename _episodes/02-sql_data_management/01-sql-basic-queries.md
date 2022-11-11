@@ -57,7 +57,7 @@ been sampled we use `DISTINCT`
 If we select more than one column, then the distinct pairs of values are
 returned
 
-    SELECT DISTINCT year, species_id
+    SELECT DISTINCT year, city
     FROM matches;
 
 ### Calculated values
