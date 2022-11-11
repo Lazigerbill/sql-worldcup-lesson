@@ -66,17 +66,18 @@ We can also do calculations with the values in a query.
 For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
-    SELECT matchid, playername, goal*60
+    SELECT matchid, playername, goal/60.0
     FROM players;
 
-When we run the query, the expression `weight / 1000` is evaluated for each
-row and appended to that row, in a new column. If we used the `INTEGER` data type
-for the weight field then integer division would have been done, to obtain the
-correct results in that case divide by `1000.0`. Expressions can use any fields,
-any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
-functions. For example, we could round the values to make them easier to read.
+When we run the query, the expression `goal/60.0` is evaluated for each
+row and appended to that row, in a new column. Since we used the `INTEGER` data type
+for the goal field, integer division was done to obtain the correct results, in which case, we divided by `60.0`. 
+If 'INTEGER' data type was not used, we would evaluate 'goal/60'. 
+Expressions can use any fields, any arithmetic operators (`+`, `-`, `*`, and `/`)
+and a variety of built-in functions. For example, we could round the values to 
+make them easier to read.
 
-    SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000, 2)
+    SELECT matchid, playername, ROUND (goal/60.0, 3)
     FROM matches;
 
 > ## Challenge
