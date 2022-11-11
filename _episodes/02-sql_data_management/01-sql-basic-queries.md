@@ -51,7 +51,7 @@ Sometimes you don't want to see all the results, you just want to get a sense of
 If we want only the unique values so that we can quickly see what species have
 been sampled we use `DISTINCT` 
 
-    SELECT DISTINCT species_id
+    SELECT DISTINCT city
     FROM matches;
 
 If we select more than one column, then the distinct pairs of values are
