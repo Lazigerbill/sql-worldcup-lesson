@@ -78,7 +78,7 @@ and a variety of built-in functions. For example, we could round the values to
 make them easier to read.
 
     SELECT matchid, playername, ROUND (goal/60.0, 3)
-    FROM matches;
+    FROM players;
 
 > ## Challenge
 >
@@ -86,7 +86,7 @@ make them easier to read.
 >
 > > ## Solution
 > > ~~~
-> > SELECT Year, Datetime, Stage, Stadium, Home team name, Away team name and, MatchID
+> > SELECT Year, Datetime, Stage, Stadium, HomeTeamName, AwayTeamName and, MatchID
 > > FROM matches;
 > > ~~~
 > > {: .sql}
@@ -104,21 +104,19 @@ criteria.  For example, let’s say we only want data for final games, which has
     WHERE Stage='Final';
 
 We can do the same thing with numbers.
-Here, we only want the data since 1992:
+Here, we only want the data since 1945:
 
-    SELECT * FROM matches
-    WHERE Year >= 1992;
-
-If we used the `TEXT` data type for the year, the `WHERE` clause should
-be `year >= '1992'`. 
+    SELECT * 
+    FROM matches
+    WHERE Year >= 1945;
 
 We can use more sophisticated conditions by combining tests
 with `AND` and `OR`.  For example, suppose we want the data on finals
-starting in the year 1992:
+starting in the year 1945:
 
     SELECT *
     FROM matches
-    WHERE (year >= 1992) AND (Stage = 'Final');
+    WHERE (year >= 1945) AND (Stage = 'Final');
 
 Note that the parentheses are not needed, but again, they help with
 readability.  They also ensure that the computer combines `AND` and `OR`
@@ -133,14 +131,14 @@ Stage names `Quarter-finals`, `Semi-finals`, and `Final`, we could combine the t
 
 > ## Challenge
 >
-> - Produce a table listing the data for all individuals in Plot 1 
+> - Produce a table listing the data from (HomeTeamGoals = 4 )
 > that had anattendance of more than 50000 people, telling us the date, MatchID, and Stadium. 
 >
 > > ## Solution
 > > ~~~
-> > SELECT Datetime, MatchID, Attendance
+> > SELECT Datetime, MatchID, Attendance, HomeTeamGoals
 > > FROM matches
-> > WHERE (plot_id = 1) AND (Attendance > 50000);
+> > WHERE (HomeTeamGoals = 4) AND (Attendance > 50000);
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -149,7 +147,7 @@ Stage names `Quarter-finals`, `Semi-finals`, and `Final`, we could combine the t
 ## Building more complex queries
 
 Now, let's combine the above queries to get data for the Quarter-finals, Semifinals and Final stages from
-the year 1992 on.  This time, let’s use IN as one way to make the query easier
+the year 1950 onwards. This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (Stage = 'Quarter-finals') OR (Stage
 = 'Semi-finals') OR (Stage = 'Final')`, but reads more neatly:
 
@@ -181,26 +179,26 @@ comments; this is especially true of more complex queries.
 ## Sorting
 
 We can also sort the results of our queries by using `ORDER BY`.
-For simplicity, let’s go back to the **WorldCupPlayers** table and alphabetize it by taxa.
+For simplicity, let’s go back to the **players** table and alphabetize it by PlayerName.
 
-First, let's look at what's in the **WorldCupPlayers** table. It's a table of the RoundID and MatchID, names and players' information for every game. Having this in a separate table is nice, because we didn't need to include all
-this information in our main **Matches** table.
+First, let's look at what's in the **players** table. It's a table of the RoundID and MatchID, names and players' information for every game. Having this in a separate table is nice, because we didn't need to include all
+this information in our main **matches** table.
 
     SELECT *
-    FROM WorldCupPlayers;
+    FROM players;
 
 Now let's order it by Player Name.
 
     SELECT *
-    FROM WorldCupPlayers
-    ORDER BY Player Name ASC;
+    FROM players
+    ORDER BY PlayerName ASC;
 
 The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
     SELECT *
-    FROM WorldCupPlayers
-    ORDER BY Player Name DESC;
+    FROM players
+    ORDER BY PlayerName DESC;
 
 `ASC` is the default.
 
@@ -208,8 +206,8 @@ We can also sort on several fields at once.
 To truly be alphabetical, we might want to order by MatchID then Team Initials.
 
     SELECT *
-    FROM WorldCupPlayers
-    ORDER BY MatchID ASC, Team Initials ASC;
+    FROM players
+    ORDER BY TeamInitials ASC, PlayerName ASC;
 
 > ## Challenge
 >
@@ -218,7 +216,7 @@ To truly be alphabetical, we might want to order by MatchID then Team Initials.
 >
 > > ## Solution
 > > ~~~
-> > SELECT Year, MatchID, attendance
+> > SELECT Year, city, attendance, matchid, HomeTeamInitials, AwayTeamInitials, HomeTeamGoals, AwayTeamGoals
 > > FROM matches
 > > ORDER BY Attendance DESC;
 > > ~~~
@@ -232,10 +230,10 @@ Another note for ordering. We don’t actually have to display a column to sort 
 it.  For example, let’s say we want to order the Team Initials FRA by their MatchID, but
 we only want to see Player Name and Shirt Number.
 
-    SELECT Player Name, Shirt Number
-    FROM WorldCupPlayers
-    WHERE Team Initials = 'FRA'
-    ORDER BY MatchID ASC;
+    SELECT PlayerName, ShirtNumber
+    FROM players
+    WHERE Team Initials = 'FRA' AND ShirtNumber > 0
+    ORDER BY ShirtNumber ASC, MatchID ASC;
 
 We can do this because sorting occurs earlier in the computational pipeline than
 field selection.
@@ -253,18 +251,18 @@ we recommend to put each clause on its own line.
 > ## Challenge
 >
 > - Let's try to combine what we've learned so far in a single
-> query. Using the matches table, write a query to display the three date fields,
+> query. Using the matches table, write a query to display the year,
 > `MatchesID`, Home Team Name and Away Team Name, for
-> games in 1999, ordered alphabetically by the `Home Team Name`.
+> games in 1998, ordered alphabetically by the `Home Team Name`.
 > - Write the query as a single line, then put each clause on its own line, and
 > see how more legible the query becomes!
 >
 > > ## Solution
 > > ~~~
-> > SELECT Year, MatchID, Home Team Name, Away Team Name, Home Team Goals and Away Team Goals
+> > SELECT Year, MatchID, HomeTeamName, AwayTeamName, HomeTeamGoals, AwayTeamGoals
 > > FROM matches
-> > WHERE year = 1999
-> > ORDER BY Home Team Name;
+> > WHERE year = 1998
+> > ORDER BY HomeTeamName;
 > > ~~~
 > > {: .sql}
 > {: .solution}
