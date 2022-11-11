@@ -66,7 +66,7 @@ We can also do calculations with the values in a query.
 For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
-    SELECT year, month, day, weight/1000
+    SELECT AVG(goal)
     FROM matches;
 
 When we run the query, the expression `weight / 1000` is evaluated for each
