@@ -35,7 +35,7 @@ If we want to select a single column, we can type the column name instead of the
 If we want more information, we can add more columns to the list of fields,
 right after SELECT:
 
-    SELECT year, month, day
+    SELECT year, datetime, city
     FROM matches;
 
 ### Limiting results
