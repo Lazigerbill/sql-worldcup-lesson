@@ -15,7 +15,7 @@ keypoints:
 - "Adding comments in SQL helps keep complex queries understandable."
 ---
 
-## Writing my first query
+## Writing my first query -C
 
 Let's start by using the **matches** table. Here we have data on every world cup game that was played from 1930 to 2014: the outcome of every game, goals at half time, host city, attendance, etc.
 
@@ -93,7 +93,7 @@ make them easier to read.
 > {: .solution}
 {: .challenge}
 
-## Filtering
+## Filtering-D
 
 Databases can also filter data – selecting only the data meeting certain
 criteria.  For example, let’s say we only want data for final games, which has "Final" as Stage name.  We need to add a
@@ -144,7 +144,7 @@ Stage names `Quarter-finals`, `Semi-finals`, and `Final`, we could combine the t
 > {: .solution}
 {: .challenge}
 
-## Building more complex queries
+## Building more complex queries-D
 
 Now, let's combine the above queries to get data for the Quarter-finals, Semifinals and Final stages from
 the year 1950 onwards. This time, let’s use IN as one way to make the query easier
@@ -176,7 +176,7 @@ commented version of the above query can be written as:
 Although SQL queries often read like plain English, it is *always* useful to add
 comments; this is especially true of more complex queries.
 
-## Sorting
+## Sorting-C
 
 We can also sort the results of our queries by using `ORDER BY`.
 For simplicity, let’s go back to the **players** table and alphabetize it by PlayerName.
@@ -224,7 +224,7 @@ To truly be alphabetical, we might want to order by MatchID then Team Initials.
 > {: .solution}
 {: .challenge}
 
-## Order of execution
+## Order of execution-C
 
 Another note for ordering. We don’t actually have to display a column to sort by
 it.  For example, let’s say we want to order the Team Initials FRA by their MatchID, but
