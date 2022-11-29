@@ -63,8 +63,8 @@ returned
 ### Calculated values
 
 We can also do calculations with the values in a query.
-For example, if we wanted to look at the mass of each individual
-on different dates, but we needed it in kg instead of g we would use
+For example, if we wanted to look at the time when players score a goal, 
+but we needed it in seconds instead of minutes we would use
 
     SELECT matchid, playername, goal/60.0
     FROM players;
