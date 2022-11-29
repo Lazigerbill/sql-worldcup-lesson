@@ -49,7 +49,6 @@ Let's look at some of the cleaned spreadsheets you downloaded during [Setup](../
 
 * `matches.csv`
 * `players.csv`
-* `squads.csv`
 
 > ## Challenge
 >
