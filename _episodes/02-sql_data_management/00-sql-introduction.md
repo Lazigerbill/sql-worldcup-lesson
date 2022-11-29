@@ -41,7 +41,7 @@ These queries can allow you to perform a number of actions such as: insert, sele
 
 ## Dataset Description
 
-The data we will be using different world cup historical information from 1930 to 2014. This is a real and complete dataset that includes dates and times of matches, countries that were playing, winners, losers, winning conditions, players, attendance, referees, assistants, etc. 
+The data we will be using contains historical world cup information from 1930 to 2018. This is a real and complete dataset that includes dates and times of matches, countries that were playing, winners, losers, winning conditions, players, attendance, referees, assistants, etc.,  as well as the player data for each match played in the world cup (minute in which the player scored, got substituted, got a yellow or a red card, etc.)
 
 ## Questions
 
