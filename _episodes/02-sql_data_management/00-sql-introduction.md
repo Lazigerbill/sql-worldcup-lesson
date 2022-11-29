@@ -119,10 +119,6 @@ data retrieval from a relational database.
 
 ## Relational databases
 
-Let's look at a pre-existing database, the `portal_mammals.sqlite`
-file from the Portal Project dataset that we downloaded during
-[Setup](/sql-ecology-lesson/setup.html). Click on the "Open Database" button, select the portal_mammals.sqlite file, and click "Open" to open the database.
-
 You can see the tables in the database by looking at the left hand side of the
 screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files
 we were exploring earlier. To see the contents of any table, click on it, and
@@ -136,7 +132,7 @@ The "Database Structure" tab also provides some metadata about each table. If yo
 (The rows of a database table
 are called *records*.) Each field contains
 one variety or type of data, often numbers or text. You can see in the
-`surveys` table that most fields contain numbers (BIGINT, or big integer, and FLOAT, or floating point numbers/decimals) while the `species`
+`players` table that most fields contain numbers (INT) while the `matches`
 table is entirely made up of text fields.
 
 The "Execute SQL" tab is blank now - this is where we'll be typing our queries
@@ -163,9 +159,8 @@ To summarize:
 ## Import
 
 Before we get started with writing our own queries, we'll create our own
-database.  We'll be creating this database from the three `csv` files
-we downloaded earlier.  Close the currently open database (**File > Close Database**) and then
-follow these instructions:
+database.  We'll be creating this database from the two sv` files
+we downloaded earlier.  To create a new database with the two csv files, we need to follow these stepps:
 
 1. Start a New Database
     - Click the **New Database** button
