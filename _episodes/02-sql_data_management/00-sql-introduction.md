@@ -16,7 +16,7 @@ keypoints:
 ---
 
 
-## Setup
+## Setup-C
 
 _Note: this should have been done by participants before the start of the workshop._
 
@@ -95,7 +95,7 @@ Putting our data into a relational database and using SQL will help us achieve t
 > which enables us to combine information from two or more sources.
 {: .callout}
 
-# Databases
+# Databases-D
 
 ## Why use relational databases
 
@@ -155,7 +155,7 @@ To summarize:
     * Needs an identifier in common between tables – shared column - to
        reconnect (known as a *foreign key*).
 
-## Import
+## Import-C
 
 Before we get started with writing our own queries, we'll create our own
 database.  We'll be creating this database from the two sv` files
