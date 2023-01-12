@@ -58,12 +58,12 @@ that has the following column names:
 
 Alternatively, we can use the word `USING`, as a short-hand. `USING` only 
 works on columns which share the same name. In this case we are
-telling the manager that we want to combine `surveys` with `species` and that
+telling the manager that we want to combine `players` with `matches` and that
 the common column is `species_id`.
 
     SELECT *
-    FROM surveys
-    JOIN species
+    FROM players
+    JOIN matches
     USING (species_id);
 
 The output will only have one **species_id** column
