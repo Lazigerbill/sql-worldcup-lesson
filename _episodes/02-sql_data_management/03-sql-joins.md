@@ -50,7 +50,7 @@ The output of the `JOIN` command will have columns from the first table plus the
 columns from the second table. For the above command, the output will be a table
 that has the following column names:
 
-| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard | PenaltyScored | Own Goal | Year | DateTime | Stage | Stadium | City | HomeTeamName | HomeTeamGoals | AwayTeamGoals | AwayTeamName | Winconditions | Attendance | Half-timeHomeGoals | Half-timeAwayGoals | Referee | Assistant1 | Assistant2 | RoundID | MatchID | HomeTeamInitials |AwayTeamInitials
+| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ... |||||||||||||   
 | 278  | 2347  | FRA  | HIDALGO Michael (FRA)  | S  | 17  |  Bernard LACOMBE |    |  1  |  |   |   |   |
