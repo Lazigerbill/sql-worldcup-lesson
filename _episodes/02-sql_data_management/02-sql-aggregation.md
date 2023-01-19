@@ -24,23 +24,25 @@ keypoints:
 Aggregation allows us to combine results by grouping records based on value. It is also useful for
 calculating combined values in groups.
 
-Let’s go to the surveys table and find out how many individuals there are.
+Let’s go to the matches table and find out how many games there are.
 Using the wildcard * counts the number of records (rows):
 
     SELECT COUNT(*)
-    FROM surveys;
+    FROM matches;
 
-We can also find out how much all of those individuals weigh:
+We can also find out the total attendance:
 
-    SELECT COUNT(*), SUM(weight)
-    FROM surveys;
+    SELECT COUNT(*), SUM(attendance)
+    FROM matches;
 
-We can output this value in kilograms (dividing the value by 1000.00), then rounding to 3 decimal places:
+We can now find the average attendance put game buy dividing the total attendance by the number of games played.
 (Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction)
 
-    SELECT ROUND(SUM(weight)/1000.00, 3)
-    FROM surveys;
+    SELECT COUNT(*), SUM(attendance)/COUNT(*)
+    FROM matches;
 
+Notice how this returns an integer. This is because if we don't specify that either the divisor or quotient is a decimal, SQL would automatically round the output to the nearest integer. 
+\
 There are many other aggregate functions included in SQL, for example:
 `MAX`, `MIN`, and `AVG`.
 
