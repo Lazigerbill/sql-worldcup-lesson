@@ -50,11 +50,11 @@ The output of the `JOIN` command will have columns from the first table plus the
 columns from the second table. For the above command, the output will be a table
 that has the following column names:
 
-| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard | PenaltyScored
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard | PenaltyScored | OwnGoal | Year | DateTime | Stage | Stadium | City | HomeTeamName | HomeTeamGoals | AwayTeamGoals | AwayTeamName | Winconditions | Attendance | Half-timeHomeGoals | Half-timeAwayGoals | Referee | Assiatnt1 | Assistant2 | RoundID | MatchID | HomeTeamInitials | AwayTeamInitials |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | ... ||||||||||||||   
-| 278  | 2347  | FRA  | HIDALGO Michael (FRA)  | S  | 17  |  Bernard LACOMBE |    |  1  |  |   |   |   |   |
-| ... |||||||||||||| 
+| 278  | 2347  | FRA  | HIDALGO Michael (FRA)  | S  | 17  |  Bernard LACOMBE |    |  1  |   |   |   |   |   |   |   | 1978 | 02 Jun 1978 - 13:45 | Group 1 | Estadio Jose Maria Minella | Mar de Plata | Italy | 2 | 1 | France | | 42373 | 1 | 1 | RAINEA Nicolae (ROU) | LINEMAYR Erich (AUT) | SILVAGNO CAVANNA Juan (CHI) | 278 | 2347 | ITA | FRA |
+| ... |||||||||||||||||||||||||||||||||||
 
 Alternatively, we can use the word `USING`, as a short-hand. `USING` only 
 works on columns which share the same name. In this case we are
