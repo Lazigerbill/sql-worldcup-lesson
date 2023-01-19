@@ -50,10 +50,10 @@ The output of the `JOIN` command will have columns from the first table plus the
 columns from the second table. For the above command, the output will be a table
 that has the following column names:
 
-| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ... |||||||||||||   
-| 278  | 2347  | FRA  | HIDALGO Michael (FRA)  | S  | 17  |  Bernard LACOMBE |    |  1  |  |   |   |   |
+| RoundID | MatchID | TeamInitials | CoachName | Line-up | ShirtNumber | PlayerName | Position | Goal | SubIn | SubOut | RedCard | YellowCard | PenaltyScored
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ... ||||||||||||||   
+| 278  | 2347  | FRA  | HIDALGO Michael (FRA)  | S  | 17  |  Bernard LACOMBE |    |  1  |  |   |   |   |   |
 | ... |||||||||||||| 
 
 Alternatively, we can use the word `USING`, as a short-hand. `USING` only 
