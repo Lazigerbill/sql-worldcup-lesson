@@ -48,20 +48,20 @@ There are many other aggregate functions included in SQL, for example:
 
 > ## Challenge
 >
-> Write a query that returns: the total weight, average weight, minimum and maximum weights
-> for all animals caught over the duration of the survey.
-> Can you modify it so that it outputs these values only for weights between 5 and 10?
+> Write a query that returns: the total attendance, average attendance, minimum and maximum attendance
+> for all games that have taken place in the world cup.
+> Can you modify it so that it outputs these values only for games with attendance between 9000 and 15000?
 >
 > > ## Solution
 > > ~~~
-> > -- All animals
-> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
-> > FROM surveys;
+> > -- All attendance
+> > SELECT SUM(attendance), AVG(attendance), MIN(attendance), MAX(attendance)
+> > FROM matches;
 > >
-> > -- Only weights between 5 and 10
-> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
-> > FROM surveys
-> > WHERE (weight > 5) AND (weight < 10);
+> > -- Only attendance between 19000 and 15000
+> > SELECT SUM(attendance), AVG(attendance), MIN(attendance), MAX(attendance)
+> > FROM matches
+> > WHERE (attendance > 9000) AND (attendance < 15000);
 > > ~~~
 > > {: .sql}
 > {: .solution}
