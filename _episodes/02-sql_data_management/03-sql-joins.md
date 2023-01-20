@@ -64,7 +64,7 @@ the common column is `species_id`.
     SELECT *
     FROM players
     JOIN matches
-    USING (species_id);
+    USING (RoundID) AND (MatchID);
 
 The output will only have one **species_id** column
 
