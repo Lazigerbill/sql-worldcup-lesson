@@ -1,4 +1,4 @@
-import csv
+import csv # Forked
 
 filename = 'players_updated.csv'
 
